@@ -6,368 +6,393 @@
 <title>For Keerthu ❤️</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
+width:100%;
+height:100%;
+overflow:hidden;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-        radial-gradient(circle at 50% 10%,#64164e 0%,#210d2b 38%,#09040d 100%);
-    color:white;
+font-family:Arial,Helvetica,sans-serif;
+background:
+radial-gradient(circle at 50% 10%,#64164e 0%,#210d2b 40%,#09040d 100%);
+color:white;
 }
 
 #app{
-    width:100%;
-    height:100svh;
-    position:relative;
-    overflow:hidden;
+width:100%;
+height:100svh;
+position:relative;
+overflow:hidden;
 }
 
 /* SLIDES */
 
 .slide{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:22px;
-    opacity:0;
-    transform:translateX(50px) scale(.97);
-    pointer-events:none;
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:18px;
+opacity:0;
+transform:translateX(60px) scale(.97);
+pointer-events:none;
+transition:
+opacity .5s ease,
+transform .5s ease;
 }
 
 .slide.active{
-    opacity:1;
-    transform:translateX(0) scale(1);
-    pointer-events:auto;
+opacity:1;
+transform:translateX(0) scale(1);
+pointer-events:auto;
 }
 
 .content{
-    width:min(900px,100%);
-    max-height:90svh;
-    overflow-y:auto;
-    text-align:center;
-    padding:10px 5px 80px;
-    scrollbar-width:none;
+width:min(900px,100%);
+max-height:92svh;
+overflow-y:auto;
+scrollbar-width:none;
+text-align:center;
+padding:15px 5px 75px;
 }
 
 .content::-webkit-scrollbar{
-    display:none;
+display:none;
 }
 
 /* TEXT */
 
 .eyebrow{
-    color:#ffafd0;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-size:.75rem;
-    margin-bottom:15px;
+color:#ffafd0;
+letter-spacing:3px;
+text-transform:uppercase;
+font-size:.72rem;
+margin-bottom:15px;
 }
 
 h1{
-    font-size:clamp(2.4rem,10vw,5rem);
-    line-height:1.05;
-    margin-bottom:18px;
-    text-shadow:0 5px 30px #0008;
+font-size:clamp(2.4rem,10vw,5rem);
+line-height:1.05;
+margin-bottom:18px;
+text-shadow:0 5px 30px #0008;
 }
 
 h2{
-    font-size:clamp(1.9rem,7vw,3.5rem);
-    line-height:1.1;
-    margin-bottom:18px;
+font-size:clamp(1.8rem,7vw,3.5rem);
+line-height:1.1;
+margin-bottom:18px;
 }
 
 p{
-    color:#f5e6f0;
-    font-size:1.03rem;
+color:#f5e6f0;
+font-size:1rem;
+line-height:1.55;
 }
 
 .date{
-    color:#ff9fc8;
-    letter-spacing:4px;
-    font-weight:bold;
-    margin:15px 0 20px;
+color:#ff9fc8;
+letter-spacing:3px;
+font-weight:bold;
+margin:15px 0 20px;
 }
 
-/* CARDS */
+/* CARD */
 
 .card{
-    background:#ffffff10;
-    border:1px solid #ffffff1c;
-    border-radius:28px;
-    padding:25px;
-    margin:20px auto;
-    max-width:760px;
-    box-shadow:0 20px 60px #0005;
-    backdrop-filter:blur(12px);
+background:#ffffff10;
+border:1px solid #ffffff1c;
+border-radius:27px;
+padding:23px;
+margin:18px auto;
+max-width:760px;
+box-shadow:0 20px 60px #0005;
+backdrop-filter:blur(12px);
 }
 
 /* BUTTONS */
 
 .btnrow{
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-top:25px;
+display:flex;
+gap:11px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:23px;
 }
 
 .btn{
-    border:1px solid #ffffff25;
-    background:#ffffff12;
-    color:white;
-    padding:13px 21px;
-    border-radius:999px;
-    cursor:pointer;
-    transition:.25s;
-    box-shadow:0 8px 25px #0003;
+border:1px solid #ffffff25;
+background:#ffffff12;
+color:white;
+padding:12px 20px;
+border-radius:999px;
+cursor:pointer;
+font-size:.95rem;
+transition:.25s;
+box-shadow:0 8px 25px #0003;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .btn:active{
-    transform:scale(.95);
+transform:scale(.95);
 }
 
 .primary{
-    background:linear-gradient(135deg,#ff4f9a,#a83df5);
-    border:none;
+background:linear-gradient(135deg,#ff4f9a,#a83df5);
+border:none;
 }
 
 /* PHOTO */
 
 .photo{
-    width:100%;
-    max-width:390px;
-    aspect-ratio:1/1;
-    margin:18px auto;
-    border-radius:25px;
-    overflow:hidden;
-    border:1px dashed #ff79b2;
-    background:#24152d;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#ffafd0;
-    font-weight:bold;
+width:100%;
+max-width:390px;
+aspect-ratio:1/1;
+margin:18px auto;
+border-radius:25px;
+overflow:hidden;
+border:1px dashed #ff79b2;
+background:#24152d;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#ffafd0;
+font-weight:bold;
+line-height:1.5;
 }
 
 .photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 /* PHOTO GRID */
 
 .photo-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    max-width:720px;
-    margin:20px auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:9px;
+max-width:720px;
+margin:18px auto;
 }
 
 .photo-grid .photo{
-    margin:0;
-    max-width:none;
+margin:0;
+max-width:none;
+aspect-ratio:1/1;
 }
 
 /* LETTER */
 
 .letter{
-    text-align:left;
-    background:#fff9;
-    color:#32172c;
-    padding:27px;
-    border-radius:27px;
-    max-width:760px;
-    margin:auto;
+text-align:left;
+background:#fff;
+color:#32172c;
+padding:25px;
+border-radius:27px;
+max-width:760px;
+margin:auto;
 }
 
 .letter p{
-    color:#43283d;
-    margin-bottom:15px;
+color:#43283d;
+margin-bottom:14px;
 }
 
 .letter strong{
-    color:#a51e67;
+color:#a51e67;
 }
 
-/* EMOJIS */
+/* EMOJI */
 
 .bigemoji{
-    font-size:5rem;
-    animation:float 2s ease-in-out infinite;
+font-size:4.5rem;
+animation:float 2s ease-in-out infinite;
 }
 
-/* QUIZ */
+/* QUIZ RESULT */
 
 .choice-result{
-    min-height:120px;
-    margin-top:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+min-height:110px;
+margin-top:15px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .result{
-    background:#ffffff0d;
-    border:1px solid #ffffff1c;
-    border-radius:25px;
-    padding:22px;
-    animation:pop .45s ease;
+background:#ffffff0d;
+border:1px solid #ffffff1c;
+border-radius:25px;
+padding:20px;
+animation:pop .45s ease;
+line-height:1.5;
 }
 
 .result b{
-    color:#ff9fc6;
+color:#ff9fc6;
 }
 
 /* FINAL */
 
 .final{
-    background:
-        radial-gradient(circle at center,#74154f,#17091f 65%);
+background:
+radial-gradient(circle at center,#74154f,#17091f 65%);
 }
 
 /* HEARTS */
 
 .heart{
-    position:fixed;
-    bottom:-30px;
-    pointer-events:none;
-    z-index:100;
-    animation:rise 5s linear forwards;
+position:fixed;
+bottom:-30px;
+pointer-events:none;
+z-index:100;
+animation:rise 5s linear forwards;
 }
 
 /* CONFETTI */
 
 .confetti{
-    position:fixed;
-    top:-20px;
-    width:8px;
-    height:13px;
-    z-index:100;
-    pointer-events:none;
-    animation:fall 3.5s linear forwards;
+position:fixed;
+top:-20px;
+width:8px;
+height:13px;
+z-index:100;
+pointer-events:none;
+animation:fall 3.5s linear forwards;
 }
 
 /* DOTS */
 
 .dots{
-    position:fixed;
-    top:15px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:200;
-    display:flex;
-    gap:5px;
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+z-index:200;
+display:flex;
+gap:5px;
 }
 
 .dot{
-    width:6px;
-    height:6px;
-    background:#ffffff40;
-    border-radius:50%;
-    transition:.3s;
+width:6px;
+height:6px;
+background:#ffffff40;
+border-radius:50%;
+transition:.3s;
 }
 
 .dot.active{
-    width:20px;
-    border-radius:10px;
-    background:#ff82b4;
+width:20px;
+border-radius:10px;
+background:#ff82b4;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 .navigation{
-    position:fixed;
-    bottom:15px;
-    left:0;
-    right:0;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    z-index:200;
+position:fixed;
+bottom:15px;
+left:0;
+right:0;
+display:flex;
+justify-content:center;
+gap:10px;
+z-index:200;
 }
 
 .navigation button{
-    background:#ffffff15;
-    border:1px solid #ffffff25;
-    color:white;
-    padding:9px 15px;
-    border-radius:999px;
-    backdrop-filter:blur(10px);
+background:#ffffff15;
+border:1px solid #ffffff25;
+color:white;
+padding:9px 15px;
+border-radius:999px;
+backdrop-filter:blur(10px);
 }
 
 /* ANIMATIONS */
 
 @keyframes float{
-    50%{
-        transform:translateY(-12px) rotate(2deg);
-    }
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px) rotate(2deg);
+}
+
 }
 
 @keyframes pop{
-    from{
-        opacity:0;
-        transform:scale(.8);
-    }
 
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
 }
 
 @keyframes rise{
-    to{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
-    }
+
+to{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
+
 }
 
 @keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:0;
-    }
+
+to{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
+
 }
 
 @media(max-width:600px){
 
-    .slide{
-        padding:16px;
-    }
-
-    .card{
-        padding:20px;
-    }
-
-    .photo-grid{
-        gap:8px;
-    }
-
-    .btn{
-        padding:12px 16px;
-    }
+.slide{
+padding:14px;
 }
+
+.card{
+padding:19px;
+}
+
+.photo-grid{
+gap:7px;
+}
+
+.btn{
+padding:11px 16px;
+}
+
+.letter{
+padding:20px;
+font-size:.9rem;
+}
+
+}
+
 </style>
 </head>
 
@@ -377,9 +402,9 @@ p{
 <div id="app">
 
 
-<!-- ================================================= -->
-<!-- SLIDE 1 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 1. INTRO -->
+<!-- ========================= -->
 
 <section class="slide active">
 
@@ -398,7 +423,8 @@ Hey, Keerthu... 👀
 </h1>
 
 <p>
-I made something for you.<br>
+I made something for you.
+<br>
 And no... it's not just a birthday wish. 😂
 </p>
 
@@ -415,9 +441,9 @@ TAP TO OPEN ❤️
 </section>
 
 
-<!-- ================================================= -->
-<!-- SLIDE 2 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 2. BIRTHDAY -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -428,7 +454,8 @@ TAP TO OPEN ❤️
 </div>
 
 <h1>
-HAPPY BIRTHDAY<br>
+HAPPY BIRTHDAY
+<br>
 KEERTHU ❤️
 </h1>
 
@@ -457,9 +484,9 @@ THE STORY STARTS →
 </section>
 
 
-<!-- ================================================= -->
-<!-- SLIDE 3 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 3. ONE YEAR -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -480,10 +507,14 @@ ONE YEAR OF US 🫂
 <div class="card">
 
 <p>
-365-ish days of friendship.<br>
-Countless fights.<br>
-Too many arguments.<br>
-Several cold wars.<br>
+365-ish days of friendship.
+<br>
+Countless fights.
+<br>
+Too many arguments.
+<br>
+Several cold wars.
+<br>
 And somehow... we're still here. 😂❤️
 </p>
 
@@ -498,9 +529,9 @@ KEEP GOING 🫂
 </section>
 
 
-<!-- ================================================= -->
-<!-- SLIDE 4 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 4. CHAOS -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -568,9 +599,9 @@ NEXT CHAOS →
 </section>
 
 
-<!-- ================================================= -->
-<!-- SLIDE 5 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 5. SOFT -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -611,7 +642,7 @@ onerror="placeholder(this,10)">
 <div class="card">
 
 <p>
-There are moments that don't need a caption. ❤️
+There are moments that don't need a caption. 🥹
 <br><br>
 Some people just become special without you
 realizing exactly when it happened.
@@ -628,9 +659,9 @@ NOW, A QUIZ 👀
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 1 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 6. QUESTION 1 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -647,7 +678,8 @@ Who starts the fights?
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(0,
+onclick="answer(
+0,
 'YOU 😈',
 'I KNEW IT. Finally, some honesty. 😂<br><br>But honestly... I think we both deserve the blame. 💀❤️'
 )">
@@ -655,7 +687,8 @@ YOU 😈
 </button>
 
 <button class="btn"
-onclick="answer(0,
+onclick="answer(
+0,
 'ME 😇',
 'Nice try. 😂<br><br>We both know there is absolutely no way I am accepting that accusation. 💀'
 )">
@@ -670,8 +703,7 @@ ME 😇
 id="next0"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 NEXT QUESTION →
 </button>
 
@@ -680,9 +712,9 @@ NEXT QUESTION →
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 2 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 7. QUESTION 2 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -699,7 +731,8 @@ Who gets angry first?
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(1,
+onclick="answer(
+1,
 'YOU 😤',
 'Correct. 😂<br><br>Anger loading speed: 100%.<br>Peace loading speed: 0%. 💀'
 )">
@@ -707,7 +740,8 @@ YOU 😤
 </button>
 
 <button class="btn"
-onclick="answer(1,
+onclick="answer(
+1,
 'ME 😭',
 'Okay fine... maybe me. 😭<br><br>But at least I make the cold war interesting. 😂'
 )">
@@ -722,8 +756,7 @@ ME 😭
 id="next1"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 NEXT QUESTION →
 </button>
 
@@ -732,9 +765,9 @@ NEXT QUESTION →
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 3 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 8. QUESTION 3 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -751,7 +784,8 @@ Who breaks the cold war first?
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(2,
+onclick="answer(
+2,
 'YOU 🫣',
 'Caught you. 😂<br><br>Someone eventually misses the chaos and comes back like nothing happened. 🫂'
 )">
@@ -759,7 +793,8 @@ YOU 🫣
 </button>
 
 <button class="btn"
-onclick="answer(2,
+onclick="answer(
+2,
 'ME 🗿',
 'Me? Never. 🗿😂<br><br>Okay... maybe eventually. But I will pretend I was completely fine. 💀'
 )">
@@ -774,8 +809,7 @@ ME 🗿
 id="next2"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 NEXT QUESTION →
 </button>
 
@@ -784,9 +818,9 @@ NEXT QUESTION →
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 4 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 9. QUESTION 4 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -803,7 +837,8 @@ Who is more annoying?
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(3,
+onclick="answer(
+3,
 'YOU 😂',
 'Correct answer detected. 🚨😂<br><br>But somehow... I still keep you around. ❤️'
 )">
@@ -811,7 +846,8 @@ YOU 😂
 </button>
 
 <button class="btn"
-onclick="answer(3,
+onclick="answer(
+3,
 'ME 😇',
 'Delusion detected. 🚨😂<br><br>Nice attempt though. I respect the confidence. 💀'
 )">
@@ -826,8 +862,7 @@ ME 😇
 id="next3"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 NEXT QUESTION →
 </button>
 
@@ -836,9 +871,9 @@ NEXT QUESTION →
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 5 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 10. QUESTION 5 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -850,13 +885,15 @@ Question 5 🫂
 
 <h2>
 If we stop talking for days,
+<br>
 are we still us?
 </h2>
 
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(4,
+onclick="answer(
+4,
 'YES ❤️',
 'That is all I needed to hear. 🥹❤️<br><br>Silence can happen. Distance can happen. But that does not erase what someone means to you.'
 )">
@@ -864,7 +901,8 @@ YES ❤️
 </button>
 
 <button class="btn"
-onclick="answer(4,
+onclick="answer(
+4,
 'OBVIOUSLY 🫂',
 'Exactly. 😂❤️<br><br>Even when we act like strangers, somehow the friendship is still sitting there waiting for the next stupid conversation.'
 )">
@@ -879,8 +917,7 @@ OBVIOUSLY 🫂
 id="next4"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 ONE MORE 👀
 </button>
 
@@ -889,9 +926,9 @@ ONE MORE 👀
 </section>
 
 
-<!-- ================================================= -->
-<!-- QUESTION 6 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 11. QUESTION 6 -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -908,7 +945,8 @@ What are we?
 <div class="btnrow">
 
 <button class="btn"
-onclick="answer(5,
+onclick="answer(
+5,
 'CHAOTIC 😂',
 '100% accurate. No arguments allowed. 💀<br><br>We somehow turned friendship into a full-time comedy show.'
 )">
@@ -916,7 +954,8 @@ CHAOTIC 😂
 </button>
 
 <button class="btn"
-onclick="answer(5,
+onclick="answer(
+5,
 'SPECIAL 🥹',
 'Okay... you got me with that one. 🥹❤️<br><br>Under all the chaos, arguments and silence... yes. Special.'
 )">
@@ -931,8 +970,7 @@ SPECIAL 🥹
 id="next5"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 THE FINAL QUESTION ❤️
 </button>
 
@@ -941,9 +979,9 @@ THE FINAL QUESTION ❤️
 </section>
 
 
-<!-- ================================================= -->
-<!-- FINAL QUESTION -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 12. FINAL QUESTION -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -959,6 +997,7 @@ Final question...
 
 <h2>
 Will you stay my Keerthu?
+<br>
 🥹❤️
 </h2>
 
@@ -966,30 +1005,25 @@ Will you stay my Keerthu?
 
 <button
 class="btn primary"
-onclick="finalAnswer('yes')"
->
+onclick="finalAnswer('yes')">
 YES 🥹
 </button>
 
 <button
 class="btn"
-onclick="finalAnswer('obvious')"
->
+onclick="finalAnswer('obvious')">
 OBVIOUSLY 🙄
 </button>
 
 </div>
 
-<div id="finalResult"
-class="choice-result">
-</div>
+<div id="finalResult" class="choice-result"></div>
 
 <button
 id="finalNext"
 class="btn primary"
 style="display:none"
-onclick="nextSlide()"
->
+onclick="nextSlide()">
 I HAVE ONE LAST THING →
 </button>
 
@@ -998,9 +1032,9 @@ I HAVE ONE LAST THING →
 </section>
 
 
-<!-- ================================================= -->
-<!-- MEMORY WALL -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 13. MEMORY WALL -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -1052,9 +1086,9 @@ OPEN THE LETTER 💌
 </section>
 
 
-<!-- ================================================= -->
-<!-- LETTER -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 14. LETTER -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -1076,8 +1110,10 @@ Keerthu,
 
 <p>
 <strong>
-You were special then.<br>
-You're special now.<br>
+You were special then.
+<br>
+You're special now.
+<br>
 And you'll be special forever. ❤️
 </strong>
 </p>
@@ -1095,8 +1131,10 @@ I don't think I'll need much time to feel comfortable with you.
 </p>
 
 <p>
-I'll still tease you.<br>
-I'll still annoy you.<br>
+I'll still tease you.
+<br>
+I'll still annoy you.
+<br>
 I'll still try to make you laugh.
 </p>
 
@@ -1135,9 +1173,9 @@ ONE LAST MEMORY →
 </section>
 
 
-<!-- ================================================= -->
-<!-- PHOTOS 16-20 -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 15. FINAL PHOTOS -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -1193,9 +1231,9 @@ ONE THING ❤️
 </section>
 
 
-<!-- ================================================= -->
-<!-- PROMISE -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 16. PROMISE -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -1247,9 +1285,9 @@ FINAL SURPRISE 🎁
 </section>
 
 
-<!-- ================================================= -->
-<!-- SURPRISE -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 17. SURPRISE -->
+<!-- ========================= -->
 
 <section class="slide">
 
@@ -1273,22 +1311,20 @@ Seriously. There is absolutely nothing here.
 
 <button
 class="btn primary"
-onclick="surprise()"
->
+onclick="surprise()">
 DON'T TAP ME 💀
 </button>
 
-<div id="surpriseBox">
-</div>
+<div id="surpriseBox"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================================================= -->
-<!-- FINAL -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- 18. FINAL -->
+<!-- ========================= -->
 
 <section class="slide final">
 
@@ -1324,18 +1360,20 @@ onerror="placeholder(this,20)"
 
 <button
 class="btn primary"
-onclick="toggleMusic()"
->
+onclick="toggleMusic()">
 🎵 PLAY OUR SONG
 </button>
 
 <p style="margin-top:18px;font-size:.9rem;color:#ffb1d0">
 This isn't the end.
+<br>
 It's just another chapter. ❤️
 </p>
 
 <audio id="music" loop>
-<source src="music/birthday-song.mp3" type="audio/mpeg">
+<source
+src="music/birthday-song.mp3"
+type="audio/mpeg">
 </audio>
 
 </div>
@@ -1356,4 +1394,154 @@ It's just another chapter. ❤️
 ← BACK
 </button>
 
-<button onclick="n
+<button onclick="nextSlide()">
+NEXT →
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+let currentSlide = 0;
+
+const slides =
+document.querySelectorAll(".slide");
+
+
+/* DOTS */
+
+const dots =
+document.getElementById("dots");
+
+slides.forEach((slide,index)=>{
+
+const dot =
+document.createElement("span");
+
+dot.className="dot";
+
+if(index===0){
+dot.classList.add("active");
+}
+
+dots.appendChild(dot);
+
+});
+
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+if(index<0){
+index=0;
+}
+
+if(index>=slides.length){
+index=slides.length-1;
+}
+
+slides.forEach((slide,i)=>{
+
+slide.classList.toggle(
+"active",
+i===index
+);
+
+});
+
+currentSlide=index;
+
+
+/* UPDATE DOTS */
+
+[...dots.children].forEach(
+(dot,i)=>{
+
+dot.classList.toggle(
+"active",
+i===currentSlide
+);
+
+});
+
+
+/* BIRTHDAY CONFETTI */
+
+if(currentSlide===1){
+confetti();
+}
+
+}
+
+
+/* NEXT */
+
+function nextSlide(){
+
+if(currentSlide<
+slides.length-1){
+
+showSlide(
+currentSlide+1
+);
+
+emojiBurst();
+
+}
+
+}
+
+
+/* PREVIOUS */
+
+function previousSlide(){
+
+if(currentSlide>0){
+
+showSlide(
+currentSlide-1
+);
+
+}
+
+}
+
+
+/* PHOTO PLACEHOLDER */
+
+function placeholder(
+img,
+number
+){
+
+img.style.display="none";
+
+img.parentElement.innerHTML=
+"📸<br>PHOTO "
++number+
+"<br><small>Add your photo later</small>";
+
+}
+
+
+/* QUIZ ANSWERS */
+
+function answer(
+number,
+choice,
+message
+){
+
+const result =
+document.getElementById(
+"result"+number
+    
