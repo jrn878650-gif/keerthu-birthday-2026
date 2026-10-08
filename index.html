@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Keerthu ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 50% 10%,#64164e 0%,#210d2b 38%,#09040d 100%);
+    color:white;
+}
+
+#app{
+    width:100%;
+    height:100svh;
+    position:relative;
+    overflow:hidden;
+}
+
+/* SLIDES */
+
+.slide{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+    opacity:0;
+    transform:translateX(50px) scale(.97);
+    pointer-events:none;
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.slide.active{
+    opacity:1;
+    transform:translateX(0) scale(1);
+    pointer-events:auto;
+}
+
+.content{
+    width:min(900px,100%);
+    max-height:90svh;
+    overflow-y:auto;
+    text-align:center;
+    padding:10px 5px 80px;
+    scrollbar-width:none;
+}
+
+.content::-webkit-scrollbar{
+    display:none;
+}
+
+/* TEXT */
+
+.eyebrow{
+    color:#ffafd0;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:.75rem;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:clamp(2.4rem,10vw,5rem);
+    line-height:1.05;
+    margin-bottom:18px;
+    text-shadow:0 5px 30px #0008;
+}
+
+h2{
+    font-size:clamp(1.9rem,7vw,3.5rem);
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+p{
+    color:#f5e6f0;
+    font-size:1.03rem;
+}
+
+.date{
+    color:#ff9fc8;
+    letter-spacing:4px;
+    font-weight:bold;
+    margin:15px 0 20px;
+}
+
+/* CARDS */
+
+.card{
+    background:#ffffff10;
+    border:1px solid #ffffff1c;
+    border-radius:28px;
+    padding:25px;
+    margin:20px auto;
+    max-width:760px;
+    box-shadow:0 20px 60px #0005;
+    backdrop-filter:blur(12px);
+}
+
+/* BUTTONS */
+
+.btnrow{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.btn{
+    border:1px solid #ffffff25;
+    background:#ffffff12;
+    color:white;
+    padding:13px 21px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 8px 25px #0003;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn:active{
+    transform:scale(.95);
+}
+
+.primary{
+    background:linear-gradient(135deg,#ff4f9a,#a83df5);
+    border:none;
+}
+
+/* PHOTO */
+
+.photo{
+    width:100%;
+    max-width:390px;
+    aspect-ratio:1/1;
+    margin:18px auto;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px dashed #ff79b2;
+    background:#24152d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffafd0;
+    font-weight:bold;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* PHOTO GRID */
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    max-width:720px;
+    margin:20px auto;
+}
+
+.photo-grid .photo{
+    margin:0;
+    max-width:none;
+}
+
+/* LETTER */
+
+.letter{
+    text-align:left;
+    background:#fff9;
+    color:#32172c;
+    padding:27px;
+    border-radius:27px;
+    max-width:760px;
+    margin:auto;
+}
+
+.letter p{
+    color:#43283d;
+    margin-bottom:15px;
+}
+
+.letter strong{
+    color:#a51e67;
+}
+
+/* EMOJIS */
+
+.bigemoji{
+    font-size:5rem;
+    animation:float 2s ease-in-out infinite;
+}
+
+/* QUIZ */
+
+.choice-result{
+    min-height:120px;
+    margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.result{
+    background:#ffffff0d;
+    border:1px solid #ffffff1c;
+    border-radius:25px;
+    padding:22px;
+    animation:pop .45s ease;
+}
+
+.result b{
+    color:#ff9fc6;
+}
+
+/* FINAL */
+
+.final{
+    background:
+        radial-gradient(circle at center,#74154f,#17091f 65%);
+}
+
+/* HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    z-index:100;
+    animation:rise 5s linear forwards;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:8px;
+    height:13px;
+    z-index:100;
+    pointer-events:none;
+    animation:fall 3.5s linear forwards;
+}
+
+/* DOTS */
+
+.dots{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:200;
+    display:flex;
+    gap:5px;
+}
+
+.dot{
+    width:6px;
+    height:6px;
+    background:#ffffff40;
+    border-radius:50%;
+    transition:.3s;
+}
+
+.dot.active{
+    width:20px;
+    border-radius:10px;
+    background:#ff82b4;
+}
+
+/* NAV */
+
+.navigation{
+    position:fixed;
+    bottom:15px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    z-index:200;
+}
+
+.navigation button{
+    background:#ffffff15;
+    border:1px solid #ffffff25;
+    color:white;
+    padding:9px 15px;
+    border-radius:999px;
+    backdrop-filter:blur(10px);
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+
+    .slide{
+        padding:16px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .photo-grid{
+        gap:8px;
+    }
+
+    .btn{
+        padding:12px 16px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div id="app">
+
+
+<!-- ================================================= -->
+<!-- SLIDE 1 -->
+<!-- ================================================= -->
+
+<section class="slide active">
+
+<div class="content">
+
+<div class="eyebrow">
+A little secret 👀
+</div>
+
+<div class="bigemoji">
+💌
+</div>
+
+<h1>
+Hey, Keerthu... 👀
+</h1>
+
+<p>
+I made something for you.<br>
+And no... it's not just a birthday wish. 😂
+</p>
+
+<div class="btnrow">
+
+<button class="btn primary" onclick="nextSlide()">
+TAP TO OPEN ❤️
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 2 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+19 • 10 • 2026
+</div>
+
+<h1>
+HAPPY BIRTHDAY<br>
+KEERTHU ❤️
+</h1>
+
+<p>
+One more year of you being you...
+<br>
+and one more year of me tolerating you. 😂
+</p>
+
+<div class="photo">
+
+<img
+src="photos/photo1.jpg"
+alt="Photo 1"
+onerror="placeholder(this,1)"
+>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+THE STORY STARTS →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 3 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+A date worth remembering
+</div>
+
+<h2>
+ONE YEAR OF US 🫂
+</h2>
+
+<div class="date">
+15 OCTOBER 2025 → 15 OCTOBER 2026
+</div>
+
+<div class="card">
+
+<p>
+365-ish days of friendship.<br>
+Countless fights.<br>
+Too many arguments.<br>
+Several cold wars.<br>
+And somehow... we're still here. 😂❤️
+</p>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+KEEP GOING 🫂
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 4 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+The evidence 😂
+</div>
+
+<h2>
+OUR CHAOTIC ARCHIVE
+</h2>
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="photos/photo2.jpg"
+onerror="placeholder(this,2)">
+</div>
+
+<div class="photo">
+<img src="photos/photo3.jpg"
+onerror="placeholder(this,3)">
+</div>
+
+<div class="photo">
+<img src="photos/photo4.jpg"
+onerror="placeholder(this,4)">
+</div>
+
+<div class="photo">
+<img src="photos/photo5.jpg"
+onerror="placeholder(this,5)">
+</div>
+
+<div class="photo">
+<img src="photos/photo6.jpg"
+onerror="placeholder(this,6)">
+</div>
+
+</div>
+
+<div class="card">
+
+<p>
+We were definitely normal here. 💀
+<br><br>
+Another completely unnecessary fight. 😭
+<br><br>
+Serious situation. Zero seriousness. 😂
+<br><br>
+Don't ask what happened before this.
+<br><br>
+Certified chaos.
+</p>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+NEXT CHAOS →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 5 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+But seriously...
+</div>
+
+<h2>
+BUT BETWEEN ALL THAT CHAOS... 🥹
+</h2>
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="photos/photo7.jpg"
+onerror="placeholder(this,7)">
+</div>
+
+<div class="photo">
+<img src="photos/photo8.jpg"
+onerror="placeholder(this,8)">
+</div>
+
+<div class="photo">
+<img src="photos/photo9.jpg"
+onerror="placeholder(this,9)">
+</div>
+
+<div class="photo">
+<img src="photos/photo10.jpg"
+onerror="placeholder(this,10)">
+</div>
+
+</div>
+
+<div class="card">
+
+<p>
+There are moments that don't need a caption. ❤️
+<br><br>
+Some people just become special without you
+realizing exactly when it happened.
+</p>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+NOW, A QUIZ 👀
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 1 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 1 😂
+</div>
+
+<h2>
+Who starts the fights?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(0,
+'YOU 😈',
+'I KNEW IT. Finally, some honesty. 😂<br><br>But honestly... I think we both deserve the blame. 💀❤️'
+)">
+YOU 😈
+</button>
+
+<button class="btn"
+onclick="answer(0,
+'ME 😇',
+'Nice try. 😂<br><br>We both know there is absolutely no way I am accepting that accusation. 💀'
+)">
+ME 😇
+</button>
+
+</div>
+
+<div id="result0" class="choice-result"></div>
+
+<button
+id="next0"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+NEXT QUESTION →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 2 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 2 😤
+</div>
+
+<h2>
+Who gets angry first?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(1,
+'YOU 😤',
+'Correct. 😂<br><br>Anger loading speed: 100%.<br>Peace loading speed: 0%. 💀'
+)">
+YOU 😤
+</button>
+
+<button class="btn"
+onclick="answer(1,
+'ME 😭',
+'Okay fine... maybe me. 😭<br><br>But at least I make the cold war interesting. 😂'
+)">
+ME 😭
+</button>
+
+</div>
+
+<div id="result1" class="choice-result"></div>
+
+<button
+id="next1"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+NEXT QUESTION →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 3 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 3 🥶
+</div>
+
+<h2>
+Who breaks the cold war first?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(2,
+'YOU 🫣',
+'Caught you. 😂<br><br>Someone eventually misses the chaos and comes back like nothing happened. 🫂'
+)">
+YOU 🫣
+</button>
+
+<button class="btn"
+onclick="answer(2,
+'ME 🗿',
+'Me? Never. 🗿😂<br><br>Okay... maybe eventually. But I will pretend I was completely fine. 💀'
+)">
+ME 🗿
+</button>
+
+</div>
+
+<div id="result2" class="choice-result"></div>
+
+<button
+id="next2"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+NEXT QUESTION →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 4 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 4 🤡
+</div>
+
+<h2>
+Who is more annoying?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(3,
+'YOU 😂',
+'Correct answer detected. 🚨😂<br><br>But somehow... I still keep you around. ❤️'
+)">
+YOU 😂
+</button>
+
+<button class="btn"
+onclick="answer(3,
+'ME 😇',
+'Delusion detected. 🚨😂<br><br>Nice attempt though. I respect the confidence. 💀'
+)">
+ME 😇
+</button>
+
+</div>
+
+<div id="result3" class="choice-result"></div>
+
+<button
+id="next3"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+NEXT QUESTION →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 5 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 5 🫂
+</div>
+
+<h2>
+If we stop talking for days,
+are we still us?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(4,
+'YES ❤️',
+'That is all I needed to hear. 🥹❤️<br><br>Silence can happen. Distance can happen. But that does not erase what someone means to you.'
+)">
+YES ❤️
+</button>
+
+<button class="btn"
+onclick="answer(4,
+'OBVIOUSLY 🫂',
+'Exactly. 😂❤️<br><br>Even when we act like strangers, somehow the friendship is still sitting there waiting for the next stupid conversation.'
+)">
+OBVIOUSLY 🫂
+</button>
+
+</div>
+
+<div id="result4" class="choice-result"></div>
+
+<button
+id="next4"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+ONE MORE 👀
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUESTION 6 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Question 6 💗
+</div>
+
+<h2>
+What are we?
+</h2>
+
+<div class="btnrow">
+
+<button class="btn"
+onclick="answer(5,
+'CHAOTIC 😂',
+'100% accurate. No arguments allowed. 💀<br><br>We somehow turned friendship into a full-time comedy show.'
+)">
+CHAOTIC 😂
+</button>
+
+<button class="btn"
+onclick="answer(5,
+'SPECIAL 🥹',
+'Okay... you got me with that one. 🥹❤️<br><br>Under all the chaos, arguments and silence... yes. Special.'
+)">
+SPECIAL 🥹
+</button>
+
+</div>
+
+<div id="result5" class="choice-result"></div>
+
+<button
+id="next5"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+THE FINAL QUESTION ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FINAL QUESTION -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+Final question...
+</div>
+
+<div class="bigemoji">
+💌
+</div>
+
+<h2>
+Will you stay my Keerthu?
+🥹❤️
+</h2>
+
+<div class="btnrow">
+
+<button
+class="btn primary"
+onclick="finalAnswer('yes')"
+>
+YES 🥹
+</button>
+
+<button
+class="btn"
+onclick="finalAnswer('obvious')"
+>
+OBVIOUSLY 🙄
+</button>
+
+</div>
+
+<div id="finalResult"
+class="choice-result">
+</div>
+
+<button
+id="finalNext"
+class="btn primary"
+style="display:none"
+onclick="nextSlide()"
+>
+I HAVE ONE LAST THING →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MEMORY WALL -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+A little piece of our chaos
+</div>
+
+<h2>
+MEMORY WALL ❤️
+</h2>
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="photos/photo11.jpg"
+onerror="placeholder(this,11)">
+</div>
+
+<div class="photo">
+<img src="photos/photo12.jpg"
+onerror="placeholder(this,12)">
+</div>
+
+<div class="photo">
+<img src="photos/photo13.jpg"
+onerror="placeholder(this,13)">
+</div>
+
+<div class="photo">
+<img src="photos/photo14.jpg"
+onerror="placeholder(this,14)">
+</div>
+
+<div class="photo">
+<img src="photos/photo15.jpg"
+onerror="placeholder(this,15)">
+</div>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+OPEN THE LETTER 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- LETTER -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+No jokes for a minute
+</div>
+
+<h2>
+A LITTLE SOMETHING FOR YOU 💌
+</h2>
+
+<div class="letter">
+
+<p>
+Keerthu,
+</p>
+
+<p>
+<strong>
+You were special then.<br>
+You're special now.<br>
+And you'll be special forever. ❤️
+</strong>
+</p>
+
+<p>
+Even if there are days when we don't talk...
+even if we stay away from each other...
+even if we pretend we're strangers...
+I don't think that changes what you mean to me.
+</p>
+
+<p>
+And if you ever come closer again,
+I don't think I'll need much time to feel comfortable with you.
+</p>
+
+<p>
+I'll still tease you.<br>
+I'll still annoy you.<br>
+I'll still try to make you laugh.
+</p>
+
+<p>
+Basically... I'll still be me with you. ❤️
+</p>
+
+<p>
+Maybe our friendship isn't always perfect,
+but it's real.
+</p>
+
+<p>
+No matter how many silent days we have,
+I don't want you to ever think that you stopped
+being special to me.
+</p>
+
+<p>
+Happy Birthday, Keerthu. ❤️
+</p>
+
+<p>
+Stay the same...
+except maybe reduce the fights a little. 😂
+</p>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+ONE LAST MEMORY →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PHOTOS 16-20 -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+The last five frames
+</div>
+
+<h2>
+20 LITTLE FRAMES OF US 📸
+</h2>
+
+<p>
+Now imagine how many more we still need. 👀
+</p>
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="photos/photo16.jpg"
+onerror="placeholder(this,16)">
+</div>
+
+<div class="photo">
+<img src="photos/photo17.jpg"
+onerror="placeholder(this,17)">
+</div>
+
+<div class="photo">
+<img src="photos/photo18.jpg"
+onerror="placeholder(this,18)">
+</div>
+
+<div class="photo">
+<img src="photos/photo19.jpg"
+onerror="placeholder(this,19)">
+</div>
+
+<div class="photo">
+<img src="photos/photo20.jpg"
+onerror="placeholder(this,20)">
+</div>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+ONE THING ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PROMISE -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+A promise
+</div>
+
+<h2>
+ONE THING ❤️
+</h2>
+
+<div class="card">
+
+<p>
+No matter how many times we fight...
+</p>
+
+<br>
+
+<p>
+No matter how many cold wars we have.
+</p>
+
+<br>
+
+<p>
+No matter how long we stay strangers.
+</p>
+
+<br>
+
+<p>
+<strong>
+Some people don't become less special
+just because you stop talking to them. ❤️
+</strong>
+</p>
+
+</div>
+
+<button class="btn primary" onclick="nextSlide()">
+FINAL SURPRISE 🎁
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SURPRISE -->
+<!-- ================================================= -->
+
+<section class="slide">
+
+<div class="content">
+
+<div class="eyebrow">
+You weren't supposed to find this 😂
+</div>
+
+<div class="bigemoji">
+🎁
+</div>
+
+<h2>
+DON'T TAP THIS 👀
+</h2>
+
+<p>
+Seriously. There is absolutely nothing here.
+</p>
+
+<button
+class="btn primary"
+onclick="surprise()"
+>
+DON'T TAP ME 💀
+</button>
+
+<div id="surpriseBox">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FINAL -->
+<!-- ================================================= -->
+
+<section class="slide final">
+
+<div class="content">
+
+<div class="eyebrow">
+You made it ❤️
+</div>
+
+<h1>
+HAPPY BIRTHDAY,
+<br>
+KEERTHU ❤️
+</h1>
+
+<h2>
+ONE YEAR OF US 🫂
+</h2>
+
+<p>
+AND MANY MORE CHAOTIC YEARS TO COME...
+</p>
+
+<div class="photo">
+
+<img
+src="photos/photo20.jpg"
+alt="Final photo"
+onerror="placeholder(this,20)"
+>
+
+</div>
+
+<button
+class="btn primary"
+onclick="toggleMusic()"
+>
+🎵 PLAY OUR SONG
+</button>
+
+<p style="margin-top:18px;font-size:.9rem;color:#ffb1d0">
+This isn't the end.
+It's just another chapter. ❤️
+</p>
+
+<audio id="music" loop>
+<source src="music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</section>
+
+
+<!-- DOTS -->
+
+<div class="dots" id="dots"></div>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<button onclick="previousSlide()">
+← BACK
+</button>
+
+<button onclick="n
